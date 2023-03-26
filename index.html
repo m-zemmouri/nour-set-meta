@@ -1,6 +1,7 @@
 ﻿<html>
 	<head>
 		<meta charset="utf-8" />
+		<base href="." />
 		<!-- jquery -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<!-- bootstrap -->
@@ -69,22 +70,22 @@
 				<a class="nav-link active" id="data-tab" data-bs-toggle="tab" href="#data" role="tab" aria-controls="data" aria-selected="true">Data</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="descriptive-tab" data-bs-toggle="tab" href="#descriptive-pane" role="tab" aria-controls="descriptive-pane" aria-selected="false" onclick="get_Chart_Descriptive()">Descriptive</a>
+				<a class="nav-link" id="descriptive-tab" data-bs-toggle="tab" href="#descriptive-pane" role="tab" aria-controls="descriptive-pane" aria-selected="false">Descriptive</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="lesion-tab" data-bs-toggle="tab" href="#lesion-pane" role="tab" aria-controls="lesion-pane" aria-selected="false" onclick="get_Chart_Lesion()">Lesion</a>
+				<a class="nav-link" id="lesion-tab" data-bs-toggle="tab" href="#lesion-pane" role="tab" aria-controls="lesion-pane" aria-selected="false">Lesion</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="age-tab" data-bs-toggle="tab" href="#age-pane" role="tab" aria-controls="age-pane" aria-selected="false" onclick="get_Chart_Age()">Age</a>
+				<a class="nav-link" id="age-tab" data-bs-toggle="tab" href="#age-pane" role="tab" aria-controls="age-pane" aria-selected="false">Age</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="gender-tab" data-bs-toggle="tab" href="#gender-pane" role="tab" aria-controls="gender-pane" aria-selected="false" onclick="get_Chart_Gender()">Gender</a>
+				<a class="nav-link" id="gender-tab" data-bs-toggle="tab" href="#gender-pane" role="tab" aria-controls="gender-pane" aria-selected="false">Gender</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="comparaison-tab" data-bs-toggle="tab" href="#comparaison-pane" role="tab" aria-controls="comparaison-pane" aria-selected="false" onclick="get_Chart_Comparaison()">Comparaison</a>
+				<a class="nav-link" id="dataset-tab" data-bs-toggle="tab" href="#dataset-pane" role="tab" aria-controls="dataset-pane" aria-selected="false">Comparaison</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="variant-tab" data-bs-toggle="tab" href="#variant-pane" role="tab" aria-controls="variant-pane" aria-selected="false" onclick="get_Chart_Variant()">Variant</a>
+				<a class="nav-link" id="variant-tab" data-bs-toggle="tab" href="#variant-pane" role="tab" aria-controls="variant-pane" aria-selected="false">Variant</a>
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
@@ -109,8 +110,8 @@
 							<th data-field="StudyDate" data-sortable="true">Study Date</th>
 							<th data-field="Covid" data-align="center" data-formatter="covidFormatter" data-sortable="true">Covid</th>
 							<th data-field="LesionRate" data-sortable="true">Lesion Rate</th>
-							<th data-field="LesionRang1" data-visible="false" data-sortable="true">Lesion Rang 1</th>
-							<th data-field="LesionRang2" data-visible="false" data-sortable="true">Lesion Rang 2</th>
+							<th data-field="LesionRang" data-visible="false" data-sortable="true">Lesion Rang</th>
+							<th data-field="LesionStage" data-visible="false" data-sortable="true">Lesion Stage</th>
 							<th data-field="Observation" data-visible="false">Observation</th>
 							<th data-field="StudyCount" data-visible="false" data-sortable="true">Study Count</th>
 						</tr>
@@ -125,7 +126,9 @@
 
 					onlyCovid.addEventListener('change', (event) => {
 						if (event.currentTarget.checked) {
-							$('#table').bootstrapTable('filterBy', { Covid: true })
+							$('#table').bootstrapTable('filterBy', {
+								Covid: true,
+							})
 						} else {
 							$('#table').bootstrapTable('filterBy', {
 								Covid: [true, false, null],
@@ -136,52 +139,47 @@
 			</div>
 			<div class="tab-pane fade" id="descriptive-pane" role="tabpanel" aria-labelledby="descriptive-tab">
 				<div class="row">
-					<div class="col-7" id="Descriptive_Statistics0"></div>
-					<div class="col-5" id="Descriptive_Statistics"></div>
+					<div class="col-6" id="Chart_DescriptiveStatistics"></div>
 				</div>
-				<script src="assets/js/chart_descriptive.js"></script>
+				<!-- <script src="assets/js/chart_descriptive.js"></script> -->
 			</div>
 			<div class="tab-pane fade" id="lesion-pane" role="tabpanel" aria-labelledby="lesion-tab">
 				<div class="row">
-					<div class="col-7" id="Chart_Lesion_A"></div>
-					<div class="col-5" id="Chart_Lesion_B"></div>
+					<div class="col-7" id="Chart_LesionRang"></div>
+					<div class="col-5" id="Chart_LesionStage"></div>
 				</div>
-				<div class="row">
-					<div class="col-7" id="Chart_Lesion_C"></div>
-					<div class="col-5" id="Chart_Lesion_D"></div>
-				</div>
-				<script src="assets/js/chart_lesion.js"></script>
+				<!-- <script src="assets/js/chart_lesion.js"></script> -->
 			</div>
 			<div class="tab-pane fade" id="age-pane" role="tabpanel" aria-labelledby="age-tab">
 				<div class="row">
-					<div class="col-7" id="Chart_Age_A"></div>
-					<div class="col-5" id="Chart_Age_B"></div>
+					<div class="col-7" id="Chart_AgeRang"></div>
+					<div class="col-5" id="Chart_AgeStage"></div>
 				</div>
-				<script src="assets/js/chart_age.js"></script>
 			</div>
 			<div class="tab-pane fade" id="gender-pane" role="tabpanel" aria-labelledby="gender-tab">
 				<div class="row">
-					<div class="col-7" id="Chart_Gender_A"></div>
-					<div class="col-5" id="Chart_Gender_B"></div>
+					<div class="col-7" id="Chart_AgeRangGender"></div>
+					<div class="col-5" id="Chart_GenderPie"></div>
 				</div>
-				<script src="assets/js/chart_gender.js"></script>
+				<!-- <script src="assets/js/chart_gender.js"></script> -->
 			</div>
-			<div class="tab-pane fade" id="comparaison-pane" role="tabpanel" aria-labelledby="comparaison-tab">
+			<div class="tab-pane fade" id="dataset-pane" role="tabpanel" aria-labelledby="comparaison-tab">
 				<div class="row">
-					<div class="col-7" id="Chart_Comparaison_A"></div>
-					<div class="col-5" id="Chart_Comparaison_B"></div>
+					<div class="col-7" id="Chart_DatasetTime"></div>
+					<div class="col-5" id="Chart_DatasetStudy"></div>
 				</div>
-				<script src="assets/js/chart_comparaison.js"></script>
+				<!-- <script src="assets/js/chart_comparaison.js"></script> -->
 			</div>
 			<div class="tab-pane fade" id="variant-pane" role="tabpanel" aria-labelledby="variant-tab">
 				<div class="row">
-					<div class="col-7" id="Chart_Variant_A"></div>
-					<div class="col-5" id="Chart_Variant_B"></div>
+					<div class="col-7" id="Chart_VariantsMonthly"></div>
+					<div class="col-5" id="Chart_VariantsPie"></div>
 				</div>
-				<script src="assets/js/chart_variant.js"></script>
+				<!-- <script src="assets/js/chart_variant.js"></script> -->
 			</div>
 		</div>
 		<footer class="footer"></footer>
 	</body>
+	<script type="module" src="./index.js"></script>
 	<script src="assets/js/page_builder.js"></script>
 </html>
