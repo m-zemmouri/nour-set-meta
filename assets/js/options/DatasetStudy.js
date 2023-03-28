@@ -1,5 +1,5 @@
-import { Datasets as colors } from '../colors.js'
-import { Datasets } from '../categories.js'
+import { Datasets as colors } from '../colors'
+import { Datasets } from '../categories'
 
 const data = {
 	ZENODO: 20,

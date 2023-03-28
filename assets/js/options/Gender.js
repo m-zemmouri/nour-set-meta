@@ -1,6 +1,6 @@
-import { Gender as data } from '../groupData.js'
-import { Gender as colors } from '../colors.js'
-import { Gender as categories } from '../categories.js'
+import { Gender as data } from '../groupData'
+import { Gender as colors } from '../colors'
+import { Gender as categories } from '../categories'
 
 const seriesData = categories.map((gender) => ({
 	name: gender === 'M' ? 'Male' : 'Female',

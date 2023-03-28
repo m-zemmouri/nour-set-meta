@@ -52,14 +52,14 @@
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
-        </div> 
+        </div>
 `;
 
 var ribbon = `
         <a href="https://github.com/zemimoh/NORTHWIND_Dashboard" target="_blank"><i class="fa fa-github"></i>&nbsp;View Source on GitHub</a>
 `;
 var footer = `
-        <div class="container"><p class="text-muted lang-entry">© 2022. Powred By ZEMMOURI Mohamed</p></div>
+        
 `;
 
 $("div.menu").html(menu);

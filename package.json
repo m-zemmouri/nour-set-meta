@@ -1,12 +1,15 @@
 {
 	"name": "nour-set-meta",
+	"private": false,
 	"version": "1.0.0",
 	"description": "Nour-set meta data",
 	"main": "index.js",
 	"type": "module",
 	"resolveJsonModule": true,
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
 	},
 	"author": "m-zemmouri",
 	"license": "ISC",
@@ -21,6 +24,7 @@
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
-		"prettier": "^2.8.7"
+		"prettier": "^2.8.7",
+		"vite": "^4.2.0"
 	}
 }

@@ -1,3 +1,5 @@
+import Data from '../../data/NourSet'
+
 const AgeRang = {}
 const AgeStage = {}
 const LesionRang = {}
@@ -27,9 +29,9 @@ function compute(data) {
 	})
 }
 
-const response = await fetch('../../data/NourSet.json')
-const data = await response.json()
-compute(data)
+// const response = await fetch('../../data/NourSet.json')
+// const Data = await response.json()
+compute(Data)
 
 // The Asynchronously fetch generate an Error
 

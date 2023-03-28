@@ -16,6 +16,17 @@
 				"endOfLine": "auto"
 			}
 		],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"js": "never",
+				"ts": "never",
+				"jsx": "never",
+				"tsx": "never",
+				"json": "always"
+			}
+		],
 		"no-unused-vars": "warn",
 		"no-console": "off",
 		"func-names": "off",

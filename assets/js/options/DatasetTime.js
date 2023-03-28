@@ -1,5 +1,5 @@
-import { Datasets as colors } from '../colors.js'
-import { Months, Datasets } from '../categories.js'
+import { Datasets as colors } from '../colors'
+import { Months, Datasets } from '../categories'
 
 const data = {
 	'NOUR-SET': '2020-01 → 2022-12',

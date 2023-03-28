@@ -1,6 +1,6 @@
-import { LesionStage as data } from '../groupData.js'
-import { LesionStage as colors } from '../colors.js'
-import { LesionStage as categories } from '../categories.js'
+import { LesionStage as data } from '../groupData'
+import { LesionStage as colors } from '../colors'
+import { LesionStage as categories } from '../categories'
 
 const seriesData = categories.map((category) => ({
 	name: category,

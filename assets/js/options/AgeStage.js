@@ -1,6 +1,6 @@
-import { AgeStage as data } from '../groupData.js'
-import { AgeStage as colors } from '../colors.js'
-import { AgeStage as categories } from '../categories.js'
+import { AgeStage as data } from '../groupData'
+import { AgeStage as colors } from '../colors'
+import { AgeStage as categories } from '../categories'
 
 const seriesData = categories.map((category) => ({
 	name: category,

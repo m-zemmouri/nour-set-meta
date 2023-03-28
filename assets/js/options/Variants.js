@@ -1,5 +1,5 @@
-import { Variants as colors } from '../colors.js'
-import { Variants } from '../categories.js'
+import { Variants as colors } from '../colors'
+import { Variants } from '../categories'
 
 const data = [
 	{ month: '2020-01', cases: 0, variant: 'SARS-CoV-2' },
