@@ -1,3 +1,5 @@
+/* eslint-disable no-new */
+/* eslint-disable no-undef */
 import Data from './data/NourSet.json'
 
 import DescriptiveStatistics from './assets/js/options/DescriptiveStatistics'
@@ -16,38 +18,36 @@ import DatasetStudy from './assets/js/options/DatasetStudy'
 
 import { VariantsPie, VariantsMonthly } from './assets/js/options/Variants'
 
-descriptiveTab.addEventListener('click', () => {
-	const descriptiveStatisticsChart = new Highcharts.Chart('Chart_DescriptiveStatistics', DescriptiveStatistics)
+document.getElementById('descriptiveTab').addEventListener('click', () => new Highcharts.Chart('Chart_DescriptiveStatistics', DescriptiveStatistics))
+
+document.getElementById('ageTab').addEventListener('click', () => {
+	new Highcharts.Chart('Chart_AgeRang', AgeRang)
+	new Highcharts.Chart('Chart_AgeStage', AgeStage)
 })
 
-ageTab.addEventListener('click', () => {
-	const ageRangChart = new Highcharts.Chart('Chart_AgeRang', AgeRang)
-	const ageStageChart = new Highcharts.Chart('Chart_AgeStage', AgeStage)
+document.getElementById('lesionTab').addEventListener('click', () => {
+	new Highcharts.Chart('Chart_LesionRang', LesionRang)
+	new Highcharts.Chart('Chart_LesionStage', LesionStage)
 })
 
-lesionTab.addEventListener('click', () => {
-	const lesionRangChart = new Highcharts.Chart('Chart_LesionRang', LesionRang)
-	const lesionStageChart = new Highcharts.Chart('Chart_LesionStage', LesionStage)
+document.getElementById('genderTab').addEventListener('click', () => {
+	new Highcharts.Chart('Chart_AgeRangGender', AgeRangGender)
+	new Highcharts.Chart('Chart_GenderPie', Gender)
 })
 
-genderTab.addEventListener('click', () => {
-	const ageRangGenderChart = new Highcharts.Chart('Chart_AgeRangGender', AgeRangGender)
-	const genderPieChart = new Highcharts.Chart('Chart_GenderPie', Gender)
+document.getElementById('datasetTab').addEventListener('click', () => {
+	new Highcharts.Chart('Chart_DatasetTime', DatasetTime)
+	new Highcharts.Chart('Chart_DatasetStudy', DatasetStudy)
 })
 
-datasetTab.addEventListener('click', () => {
-	const datasetTimeChart = new Highcharts.Chart('Chart_DatasetTime', DatasetTime)
-	const datasetStudyChart = new Highcharts.Chart('Chart_DatasetStudy', DatasetStudy)
+document.getElementById('variantTab').addEventListener('click', () => {
+	new Highcharts.Chart('Chart_VariantsMonthly', VariantsMonthly)
+	new Highcharts.Chart('Chart_VariantsPie', VariantsPie)
 })
 
-variantTab.addEventListener('click', () => {
-	const variantsMonthlyChart = new Highcharts.Chart('Chart_VariantsMonthly', VariantsMonthly)
-	const variantsChartPie = new Highcharts.Chart('Chart_VariantsPie', VariantsPie)
-})
-
-onlyCovid.addEventListener('change', () => {
+document.getElementById('onlyCovid').addEventListener('change', (event) => {
 	const filter = {}
-	if (onlyCovid.checked) filter.Covid = true
+	if (event.target.checked) filter.Covid = true
 	$('#table').bootstrapTable('filterBy', filter)
 })
 

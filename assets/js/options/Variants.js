@@ -166,6 +166,7 @@ const VariantsPie = {
 
 				formatter: function () {
 					if (this.percentage > 10) return `${this.key}<br>${Math.round(this.percentage)} %`
+					return ''
 				},
 			},
 		},
@@ -176,6 +177,7 @@ const VariantsPie = {
 				distance: 20,
 				formatter: function () {
 					if (this.percentage <= 10) return `<span style='font-weight:bold; fontSize:15px; color:${this.color}'>${this.key} : ${Math.round(this.percentage)} %</span>`
+					return ''
 				},
 			},
 		},

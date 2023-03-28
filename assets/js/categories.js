@@ -1,4 +1,5 @@
 const AgeRang = ['10 - 19', '20 - 29', '30 - 39', '40 - 49', '50 - 59', '60 - 69', '70 - 79', '80 - 89', '90 +']
+
 const AgeStage = ['Child', 'Young', 'Mature', 'Old']
 
 const LesionRang = ['01 - 10', '11 - 20', '21 - 30', '31 - 40', '41 - 50', '51 - 60', '61 - 70', '71 - 80', '81 - 90', '91 - 100']
@@ -56,4 +57,5 @@ const Variants = [
 	{ name: 'Lambda', month: '2021-03' },
 	{ name: 'Omicron', month: '2021-11' },
 ]
+
 export { AgeRang, AgeStage, LesionRang, LesionStage, Gender, Months, Datasets, Variants }
