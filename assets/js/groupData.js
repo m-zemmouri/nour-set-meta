@@ -1,4 +1,5 @@
-import Data from '../../data/NourSet'
+import Data from '../../data/NourSet.json'
+// import Data from '../../data/NourSet'
 
 const AgeRang = {}
 const AgeStage = {}

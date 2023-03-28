@@ -1,10 +1,4 @@
-// import Chart from 'https://code.highcharts.com/es-modules/Core/Chart/Chart'
-// import Highcharts from './highcharts/es-modules/masters/highcharts.src'
-// import Highcharts from './node_modules/highcharts'
-// import Chart from '/highcharts/es-modules/Core/Chart/Chart'
-// import ColumnSeries from 'highcharts/es-modules/Series/Column/ColumnSeries'
-// import PieSeries from 'highcharts/es-modules/Series/Pie/PieSeries'
-import Data from './data/NourSet'
+import Data from './data/NourSet.json'
 
 import DescriptiveStatistics from './assets/js/options/DescriptiveStatistics'
 
@@ -21,35 +15,6 @@ import DatasetTime from './assets/js/options/DatasetTime'
 import DatasetStudy from './assets/js/options/DatasetStudy'
 
 import { VariantsPie, VariantsMonthly } from './assets/js/options/Variants'
-
-// function descriptiveChart() {
-// 	const descriptiveStatisticsChart = new Highcharts.Chart('Chart_DescriptiveStatistics', DescriptiveStatistics)
-// }
-
-// function ageChart() {
-// 	const ageRangChart = new Highcharts.Chart('Chart_AgeRang', AgeRang)
-// 	const ageStageChart = new Highcharts.Chart('Chart_AgeStage', AgeStage)
-// }
-
-// function lesionChart() {
-// 	const lesionRangChart = new Highcharts.Chart('Chart_LesionRang', LesionRang)
-// 	const lesionStageChart = new Highcharts.Chart('Chart_LesionStage', LesionStage)
-// }
-
-// function genderChart() {
-// 	const ageRangGenderChart = new Highcharts.Chart('Chart_AgeRangGender', AgeRangGender)
-// 	const genderPieChart = new Highcharts.Chart('Chart_GenderPie', Gender)
-// }
-
-// function dataSetChart() {
-// 	const datasetTimeChart = new Highcharts.Chart('Chart_DatasetTime', DatasetTime)
-// 	const datasetStudyChart = new Highcharts.Chart('Chart_DatasetStudy', DatasetStudy)
-// }
-
-// function variantsChart() {
-// 	const variantsMonthlyChart = new Highcharts.Chart('Chart_VariantsMonthly', VariantsMonthly)
-// 	const variantsChartPie = new Highcharts.Chart('Chart_VariantsPie', VariantsPie)
-// }
 
 descriptiveTab.addEventListener('click', () => {
 	const descriptiveStatisticsChart = new Highcharts.Chart('Chart_DescriptiveStatistics', DescriptiveStatistics)
